@@ -14,11 +14,9 @@ from fastmcp import FastMCP
 def get_rag_content(query:str, k: int = 10, vector_store_path: str = None):
     URL = "https://api.siliconflow.cn/v1/embeddings"
     MODEL_NAME = "BAAI/bge-m3"
-    # URL = "http://ai.zenithal.ai:32520/v1/embeddings"
-    # MODEL_NAME = "bge-m3"
 
-    API_KEY = "Bearer sk-dtolptxpexqpplrfbwmcbjwqcgswqqrujsrwudorashysmvz"
-    MARKDOWN_FILE = "/Users/_diyigelieren/Documents/Kingdee/KWC/kwc_rag/kwc_doc/KWC_Developer_Documentation.md"
+    API_KEY = "Bearer xxx"
+    MARKDOWN_FILE = "./kwc_doc/KWC_Developer_Documentation.md"
 
     emb = EmbeddingModel(api_key=API_KEY, url=URL, model_name=MODEL_NAME)
     docs = chunk_markdown_by_headers(MARKDOWN_FILE)
@@ -55,7 +53,7 @@ def get_kwc_documentation(query: Annotated[str, "用户的查询内容、KWC使�
     """
     根据用户的查询内容，返回KWC使用及说明的相关文档，以帮助模型编写KWC代码。
     """
-    vector_store_path = "/Users/_diyigelieren/Documents/Kingdee/coder_agent/RAG/vector_store/faiss_bge_m3_kwc"
+    vector_store_path = "./vector_store/faiss_bge_m3_kwc"
     return get_rag_content(query=query, vector_store_path=vector_store_path)
 
 

@@ -14,10 +14,8 @@ from fastmcp import FastMCP
 def get_rag_content(query:str, k: int = 10, doc_dir: str = None, vector_store_path: str = None):
     URL = "https://api.siliconflow.cn/v1/embeddings"
     MODEL_NAME = "BAAI/bge-m3"
-    # URL = "http://ai.zenithal.ai:32520/v1/embeddings"
-    # MODEL_NAME = "bge-m3"
 
-    API_KEY = "Bearer sk-dtolptxpexqpplrfbwmcbjwqcgswqqrujsrwudorashysmvz"
+    API_KEY = "Bearer xxx"
     MARKDOWN_DIR = doc_dir
 
     emb = EmbeddingModel(api_key=API_KEY, url=URL, model_name=MODEL_NAME)

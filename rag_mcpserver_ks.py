@@ -14,10 +14,8 @@ from fastmcp import FastMCP
 def get_rag_content(query:str, k: int = 10, doc_dir: str = None, vector_store_path: str = None):
     URL = "https://api.siliconflow.cn/v1/embeddings"
     MODEL_NAME = "BAAI/bge-m3"
-    # URL = "http://ai.zenithal.ai:32520/v1/embeddings"
-    # MODEL_NAME = "bge-m3"
 
-    API_KEY = "Bearer sk-dtolptxpexqpplrfbwmcbjwqcgswqqrujsrwudorashysmvz"
+    API_KEY = "Bearer xxx"
     MARKDOWN_DIR = doc_dir
 
     emb = EmbeddingModel(api_key=API_KEY, url=URL, model_name=MODEL_NAME)
@@ -55,8 +53,8 @@ def get_ks_documentation(query: Annotated[str, "用户的查询内容、KingScri
     """
     根据用户的查询内容，返回KingScript使用及说明的相关文档，以帮助模型编写KingScript代码。
     """
-    doc_dir = "/Users/_diyigelieren/Documents/Kingdee/coder_agent/RAG/doc/ks_doc/demo"
-    vector_store_path = "/Users/_diyigelieren/Documents/Kingdee/coder_agent/RAG/vector_store/faiss_bge_m3_ks_demo"
+    doc_dir = "./doc/ks_doc/demo"
+    vector_store_path = "./vector_store/faiss_bge_m3_ks_demo"
     return get_rag_content(query=query, doc_dir=doc_dir, vector_store_path=vector_store_path)
 
 
