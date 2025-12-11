@@ -34,3 +34,102 @@
 | `xl` | 屏幕 `≥ 1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | `number` | - | 1.0.0 |
 | `xxl` | 屏幕 `≥ 1600px` 响应式栅格，可为栅格数或一个包含其他属性的对象 | `number` | - | 1.0.0 |
 | `padding` | 内边距，可选值包括 `horizontal-small`、`horizontal-medium`、`horizontal-large`、`around-small`、`around-medium`、`around-large` | `string` | - | 1.0.0 |
+
+
+## layout基础用法-use multiple-rows API， If present, layout items wrap to the following line when they exceed the layout width.
+
+### multiple-rows API实现多行布局
+```html
+<kd-layout multiple-rows>
+    <kd-layout-item size="12" padding="around-small">
+        <div>1</div>
+    </kd-layout-item>
+    <kd-layout-item size="12" padding="around-small">
+        <div>2</div>
+    </kd-layout-item>
+    <kd-layout-item size="12" padding="around-small">
+        <div>3</div>
+    </kd-layout-item>
+    <kd-layout-item size="12" padding="around-small">
+        <div>4</div>
+    </kd-layout-item>
+</kd-layout>
+```
+
+## 使用layout组件实现不同设备屏幕适配，size取值1-24之间
+```html
+<kd-layout multiple-rows>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>1</div>
+  </kd-layout-item>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>2</div>
+  </kd-layout-item>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>3</div>
+  </kd-layout-item>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>4</div>
+  </kd-layout-item>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>5</div>
+  </kd-layout-item>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>6</div>
+  </kd-layout-item>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>7</div>
+  </kd-layout-item>
+  <kd-layout-item size="12" sm="6" md="4" lg="3" padding="around-small">
+      <div>8</div>
+  </kd-layout-item>
+</kd-layout>
+```
+
+## Determines how to spread the layout items horizontally.The alignment options are center, space, spread, and end.
+```html
+<!-- horizontal-align="center" -->
+<kd-layout horizontal-align="center">
+    <kd-layout-item padding="around-small">
+        <div>1</div>
+    </kd-layout-item>
+    <kd-layout-item padding="around-small">
+        <div>2</div>
+    </kd-layout-item>
+    <kd-layout-item padding="around-small">
+        <div>3</div>
+    </kd-layout-item>
+    <kd-layout-item padding="around-small">
+        <div>4</div>
+    </kd-layout-item>
+    <kd-layout-item padding="around-small">
+        <div>5</div>
+    </kd-layout-item>
+    <kd-layout-item padding="around-small">
+        <div>6</div>
+    </kd-layout-item>
+    <kd-layout-item padding="around-small">
+        <div>7</div>
+    </kd-layout-item>
+    <kd-layout-item padding="around-small">
+        <div>8</div>
+    </kd-layout-item>
+</kd-layout>
+```
+## The layout items below become as wide as necessary to occupy the entire width of the container with flexibility="auto".
+```html
+<kd-layout>
+    <kd-layout-item flexibility="auto" padding="around-small">
+        <div>1</div>
+    </kd-layout-item>
+    <kd-layout-item flexibility="auto" padding="around-small">
+        <div>2</div>
+    </kd-layout-item>
+    <kd-layout-item flexibility="auto" padding="around-small">
+        <div>3</div>
+    </kd-layout-item>
+    <kd-layout-item flexibility="auto" padding="around-small">
+        <div>4</div>
+    </kd-layout-item>
+</kd-layout>
+```

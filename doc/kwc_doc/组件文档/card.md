@@ -70,3 +70,65 @@
 | `--kdds-c-card-body-padding-top` | 卡片主体区域上内边距 | `var(--kdds-g-spacing-4)` |
 | `--kdds-c-card-body-padding-bottom` | 卡片主体区域下内边距 | `var(--kdds-g-spacing-6)` |
 | `--kdds-c-card-footer-padding-horizontal` | 卡片底部区域左右内边距 | `var(--kdds-g-spacing-6)` |
+
+## 使用card默认插槽示例代码：
+```html
+### ✅ [正确写法 - Good Case]
+*说明：主体内容直接放在标签内，无需 slot 属性。*
+<kd-card  title="Hello">
+    <kd-button label="New" slot="actions"></kd-button>
+    <p class="kdds-card-body">Card Body (custom component)</p>
+    <p slot="footer">Card Footer</p>
+</kd-card>
+```
+### ❌ [错误写法 - Bad Case - 禁止生成]
+说明：不要显式声明 default 插槽，这是 KWC 不支持的语法。
+
+```html
+<kd-card  title="Hello">
+    <kd-button label="New" slot="actions"></kd-button>
+    <p slot="default" class="kdds-card-body">Card Body (custom component)</p>
+    <p slot="footer">Card Footer</p>
+</kd-card>
+```
+
+## card 默认用法
+```html
+<kd-card title="Hello">
+    <div slot="actions">This is card header</div>
+    <p class="kdds-card-body">Card Body Narrow (custom component)</p>
+    <p slot="footer">Card Footer</p>
+</kd-card>
+```
+
+## card 自定义header和footer
+```html
+<kd-card>
+    <h3 slot="title">
+        <kd-icon icon-name="icon-font-loading"></kd-icon>
+        Card Title
+    </h3>
+    <div slot="footer">
+            <kd-button>confirm</kd-button>
+            <kd-button>cancel</kd-button>
+    </div>
+    <p class="kdds-card-body">Card Body (custom component)</p>
+</kd-card>
+```
+
+## 使用card 提供的token实现自定义样式示例代码：
+1. 先在kd-card中定义类名
+```html
+<kd-card  title="Hello" class="kdds-custom-card">
+    <kd-button label="New" slot="actions"></kd-button>
+    <p class="kdds-card-body">Card Body (custom component)</p>
+    <p slot="footer">Card Footer</p>
+</kd-card>
+```
+
+2. 在css文件中使用kd-card提供的token实现定制化样式
+```css
+.kdds-custom-card {
+  --kdds-c-card-background: #ff0000;
+}
+```

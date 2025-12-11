@@ -130,7 +130,12 @@
 | `--kdds-c-button-custom-opacity-disabled` | 自定义按钮禁用透明度 | `var(--kdds-g-opacity-20)` |
 | `--kdds-c-button-custom-loading-icon-color` | 自定义按钮加载图标透明度 | `var(--kdds-g-opacity-40)` |
 
-## 事件事例代码：
+## 事件示例代码：
 ```html
 <kd-button variant="primary" onclick={handleSave}>保存</kd-button>
+```
+
+## 使用token自定义样式示例代码：
+```html
+<kd-button variant="primary" style="--kdds-c-button-primary-background: red;">保存</kd-button>
 ```
