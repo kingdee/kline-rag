@@ -32,7 +32,7 @@
 | `type` | 输入框的类型，可选值包括 `text`、`password` | - | `text` | 1.0.0 |
 | `onfocus` | 获取焦点时触发 | - | - | 1.0.0 |
 | `onblur` | 失去焦点时触发 | - | - | 1.0.0 |
-| `onChange` | 值改变时触发 | - | - | 1.0.0 |
+| `onchange` | 值改变时触发 | - | - | 1.0.0 |
 
 ### Input.Password
 

@@ -56,8 +56,8 @@ def get_kwc_documentation(query: Annotated[str, "用户的查询内容、KWC使�
     根据用户的查询内容，返回KWC使用及说明的相关文档，以帮助模型编写KWC代码。
     目前已有组件：复选框(kd-checkbox)、复选框组(kd-checkbox-group)、输入框(kd-input)、数值输入框(kd-input-number)、单选框(kd-radio)、单选框组(kd-radio-group)、按钮(kd-button)、按钮菜单(kd-button-menu)、图标(kd-icon)、标签(kd-tag)、卡片(kd-card)、表格(kd-table)、布局(kd-layout)、选项卡(kd-tabset)、消息提示(kd-toast)
     """
-    doc_dir = "./doc/kwc_doc_real_v2"
-    vector_store_path = "./vector_store/faiss_bge_m3_kwc_real_v2"
+    doc_dir = "doc/kwc_doc"
+    vector_store_path = "vector_store/faiss_bge_m3_kwc_real_v2"
     return get_rag_content(query=query, doc_dir=doc_dir, k=10, vector_store_path=vector_store_path)
 
 

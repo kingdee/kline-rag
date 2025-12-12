@@ -26,3 +26,16 @@
 | Token 名称 | 说明 | 默认值 |
 | :--- | :--- | :--- |
 | `--kdds-c-icon-font-size` | 图标大小 | `var(--kdds-g-icon-sizing-3,1rem)` |
+
+## 代码示例
+```html
+<!-- 图标基本用法 -->
+<kd-icon icon-name="kdfont-GIT"></kd-icon>
+<kd-icon icon-name="kdfont-GPT4"></kd-icon>
+<kd-icon icon-name="kdfont-GPTzhushou"></kd-icon>
+<kd-icon icon-name="kdfont-JS-mianxing-yidong"></kd-icon>
+<!-- 给图标添加旋转效果 -->
+<kd-icon icon-name="kdfont-JS2" spin></kd-icon>
+<!-- 给图标添加点击事件 -->
+<kd-icon icon-name="kdfont-PDF2" spin onclick={handleClick}></kd-icon>
+```

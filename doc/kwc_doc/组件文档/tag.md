@@ -162,3 +162,47 @@
 | `Opacity--kdds-c-tag-custom-close-opacity` | 关闭按钮默认透明度 | `var(--kdds-g-opacity-100,1)` |
 | `Opacity--kdds-c-tag-custom-close-opacity-hover` | 关闭按钮悬停时透明度 | `var(--kdds-g-opacity-60,0.6)` |
 | `Opacity--kdds-c-tag-custom-close-opacity-active` | 关闭按钮激活时透明度 | `var(--kdds-g-opacity-100,1)` |
+
+## 代码示例
+### 基础用法（label API的使用方法）
+```html
+<kd-tag variant="light" size="large" label="忘记密码"></kd-tag>
+```
+
+```html
+<!-- 基础用法 -->
+<kd-tag label="默认标签"></kd-tag>
+<kd-tag label="成功状态" state="success"></kd-tag>
+<kd-tag label="处理中" state="processing"></kd-tag>
+<kd-tag label="警告" state="warning"></kd-tag>
+<kd-tag label="错误" state="error"></kd-tag>
+<kd-tag label="禁用" state="invalid"></kd-tag>
+
+<!-- 不同尺寸 -->
+<kd-tag label="大尺寸" size="large"></kd-tag>
+<kd-tag label="中尺寸" size="medium"></kd-tag>
+<kd-tag label="小尺寸" size="small"></kd-tag>
+
+<!-- 不同样式变体 -->
+<kd-tag label="暗色" variant="dark"></kd-tag>
+<kd-tag label="亮色" variant="light"></kd-tag>
+<kd-tag label="描边" variant="outlined"></kd-tag>
+<kd-tag label="亮色描边" variant="light-outlined"></kd-tag>
+<kd-tag label="文本" variant="text"></kd-tag>
+
+<!-- 不同形状 -->
+<kd-tag label="圆形" shape="round"></kd-tag>
+<kd-tag label="方形" shape="square"></kd-tag>
+<kd-tag label="标记" shape="mark"></kd-tag>
+
+<!-- 带图标的标签 -->
+<kd-tag label="前缀图标" prefix-icon="icon-font-success"></kd-tag>
+<kd-tag label="后缀图标" suffix-icon="icon-font-arrow-down"></kd-tag>
+<kd-tag label="双图标" prefix-icon="icon-font-success" suffix-icon="icon-font-arrow-down"></kd-tag>
+
+<!-- 可关闭的标签 -->
+<kd-tag label="可关闭" closable onclose={handleClose}></kd-tag>
+
+<!-- 自定义样式的标签 -->
+<kd-tag label="自定义颜色" class="custom-tag"></kd-tag>
+```
