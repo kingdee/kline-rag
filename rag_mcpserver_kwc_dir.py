@@ -50,22 +50,24 @@ mcp = FastMCP(name="KWCRagServer")
 
 
 @mcp.tool
-def get_kwc_documentation(query: Annotated[str, "用户的查询内容、KWC使用及说明的任何相关文本，尽可能是多个完整的组件名称，以便召回更全面、详细的使用文档。"]) -> str:
+def get_kwc_documentation(
+        query: Annotated[str, "用户的查询内容、KWC使用及说明的任何相关文本，尽可能是多个完整的组件名称，以便召回更全面、详细的使用文档。"],
+        k: Annotated[int, "用于控制从知识库中检索的、与查询最相关的文档的最大数量。"]) -> str:
     """
     根据用户的查询内容，返回KWC使用及说明的相关文档，以帮助模型编写KWC代码。
     目前已有组件：复选框(kd-checkbox)、复选框组(kd-checkbox-group)、输入框(kd-input)、数值输入框(kd-input-number)、单选框(kd-radio)、单选框组(kd-radio-group)、按钮(kd-button)、按钮菜单(kd-button-menu)、图标(kd-icon)、标签(kd-tag)、卡片(kd-card)、表格(kd-table)、布局(kd-layout)、选项卡(kd-tabset)、消息提示(kd-toast)
     """
-    return get_rag_content(query)
+    return get_rag_content(query, k)
 
 
 if __name__ == "__main__":
     # embdding model config
     URL = "https://api.siliconflow.cn/v1/embeddings"
     MODEL_NAME = "BAAI/bge-m3"
-    API_KEY = "Bearer {your key}"
+    API_KEY = "Bearer sk-dtolptxpexqpplrfbwmcbjwqcgswqqrujsrwudorashysmvz"
 
     doc_dir = "doc/kwc_doc"
-    vector_store_path = "vector_store/faiss_bge_m3_kwc_real_v2"
+    vector_store_path = "vector_store/faiss_bge_m3_kwc"
 
     embedding_model = init_embedding_model(URL, API_KEY, MODEL_NAME)
 

@@ -15,7 +15,7 @@ async def main():
         # 调用你定义的工具
         result = await client.call_tool(
             "get_kwc_documentation", 
-            {"query": "kd-checkbox"}
+            {"query": "kd-checkbox", "k": 1}
         )
         print("Result:", result.content[0].text)
 
